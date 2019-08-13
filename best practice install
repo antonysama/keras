@@ -22,5 +22,6 @@ https://stackoverflow.com/questions/39930952/cannot-import-keras-after-installat
 https://keras.io/#getting-started-30-seconds-to-keras
 
 # Elmo w tf-hub and keras : 
-https://realpython.com/python-keras-text-classification/
-https://github.com/makcedward/nlp/blob/master/sample/nlp-embeddings-sentence-elmo.ipynb
+https://realpython.com/python-keras-text-classification/  # go to "my first keras model" & pull up data under environments>>c
+
+https://github.com/makcedward/nlp/blob/master/sample/nlp-embeddings-sentence-elmo.ipynb  # find out how to indent.
