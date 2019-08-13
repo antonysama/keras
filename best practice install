@@ -1,0 +1,22 @@
+#look for keras -- if not found see references below
+$ pip list | grep -i keras   
+
+#vritual environment
+cd ~/venv/
+virtualenv -p python3.5 py-keras
+source py-keras/bin/activate
+pip install -q -U pip setuptools wheel
+
+#install 
+pip install keras
+pip install tensorflow-gpu
+
+#import
+python
+import tensorflow
+import keras
+from keras.models import Sequential
+
+#References: 
+https://stackoverflow.com/questions/39930952/cannot-import-keras-after-installation
+https://keras.io/#getting-started-30-seconds-to-keras
