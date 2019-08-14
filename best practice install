@@ -17,6 +17,10 @@ import tensorflow
 import keras
 from keras.models import Sequential
 
+# Elmo w tf-hub and keras : 
+https://realpython.com/python-keras-text-classification/
+https://github.com/makcedward/nlp/blob/master/sample/nlp-embeddings-sentence-elmo.ipynb
+
 #References: 
 https://stackoverflow.com/questions/39930952/cannot-import-keras-after-installation
 https://keras.io/#getting-started-30-seconds-to-keras
