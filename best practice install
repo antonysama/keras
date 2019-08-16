@@ -3,7 +3,7 @@ $ pip list | grep -i keras
 
 #vritual environment
 cd ~/venv/
-virtualenv -p python3.5 py-keras
+virtualenv -p python py-keras
 source py-keras/bin/activate
 pip install -q -U pip setuptools wheel
 
