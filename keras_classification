@@ -30,7 +30,7 @@ loss, accuracy = model.evaluate(X_train, y_train, verbose=False)
 print("Training Accuracy: {:.4f}".format(accuracy))
 loss, accuracy = model.evaluate(X_test, y_test, verbose=False)
 print("Testing Accuracy:  {:.4f}".format(accuracy))
-#accuracy ~80 %
+#training accuracy ~100% test accuracy ~80 %
 
 plt.style.use('ggplot')
 def plot_history(history):
