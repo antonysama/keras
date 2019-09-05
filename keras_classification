@@ -1,12 +1,16 @@
+# Read data from 'sk_classification.py' link below (lines l-32 ) :
+# https://github.com/antonysama/sklearn/blob/master/sk_classification.py
+
 # install & import libraries
 pip install tensorflow-gpu
 pip install keras
+pip install matplotlib
 import tensorflow
 from keras.models import Sequential
 from keras import layers
+import matplotlib.pyplot as plt
 
 input_dim = X_train.shape[1]  # Number of features
-
 model = Sequential()
 model.add(layers.Dense(10, input_dim=input_dim, activation='relu'))
 model.add(layers.Dense(1, activation='sigmoid'))
@@ -15,6 +19,7 @@ model.add(layers.Dense(1, activation='sigmoid'))
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 model.summary()
 
+# Some knowledge on epochs, batch size will help?
 history = model.fit(X_train, y_train,
                     epochs=100,
                     verbose=False,
@@ -25,8 +30,8 @@ loss, accuracy = model.evaluate(X_train, y_train, verbose=False)
 print("Training Accuracy: {:.4f}".format(accuracy))
 loss, accuracy = model.evaluate(X_test, y_test, verbose=False)
 print("Testing Accuracy:  {:.4f}".format(accuracy))
+#accuracy ~80 %
 
-import matplotlib.pyplot as plt
 plt.style.use('ggplot')
 def plot_history(history):
     acc = history.history['acc']
