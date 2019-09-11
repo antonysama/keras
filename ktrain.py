@@ -1,0 +1,35 @@
+cd ~/environments/f
+
+virtualenv -p python py-keras
+source py-keras/bin/activate
+
+pip install ktrain
+pip install keras
+pip install tf-nightly-gpu 
+
+python
+
+import ktrain
+from ktrain import text
+
+#model
+(x_train, y_train), (x_test, y_test), preproc=text.texts_from_folder('aclImdb',maxlen=100, preprocess_mode='bert',classes=['pos', 'neg'])  #see reference for maxlen & batchsize
+
+#test
+learner=ktrain.get_learner(text.text_classifier('bert', (x_train, y_train)),train_data=(x_train, y_train), val_data=(x_test, y_test), batch_size=6)
+
+learner.fit_onecycle(2e-5, 1)
+
+#predict, save & re load 
+predictor = ktrain.get_predictor(learner.model, preproc)
+#See reference 2
+predictor.save('/home/antony/environments/f/model')
+
+Refences:
+https://towardsdatascience.com/bert-text-classification-in-3-lines-of-code-using-keras-264db7e7a358
+https://github.com/amaiya/ktrain/blob/master/tutorial-04-text-classification.ipynb
+
+
+
+
+
